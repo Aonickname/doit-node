@@ -5,7 +5,6 @@ app.get("/", (req, res) => {
     res.send(`Hello, Node!`);
 });
 
-
 // 연락처 가져오기
 app.get("/contacts", (req, res) => {
     res.send("Contatcts Page");
