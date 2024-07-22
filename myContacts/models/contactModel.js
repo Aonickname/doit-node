@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const conatctSchema = new mongoose.Schema( {
+const contactSchema = new mongoose.Schema( {
     name: {
         type: String,
         required: true
@@ -19,6 +19,6 @@ const conatctSchema = new mongoose.Schema( {
 
 // 스키마 -> 모델
 // mongoose.model(모델명, 스키마명)
-const Contact = mongoose.model(("Contact", conatactSchema));
+const Contact = mongoose.model("Contact", contactSchema);
 
 module.exports = Contact;
