@@ -1,7 +1,9 @@
 const express = require("express");
-// const dbConnect = require("./config/dbConnect");
+const dbConnect = require("./config/dbConnect");
 
 const app = express();
+
+dbConnect();
 
 app.get("/", (req, res) => {
     res.send(`Hello, Node!`);
