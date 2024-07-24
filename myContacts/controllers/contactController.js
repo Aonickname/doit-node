@@ -19,23 +19,19 @@ const addContactForm = asyncHandler((req, res) => {
 const createContact = asyncHandler(async (req, res) => {
   // console.log(req.body);
   const { name, email, phone } = req.body;
-  if (!name || !email || !phone){
-    return res.send("필수 값이 입력되지 않았습니다.");
-  }
-
-  const contact = await Contact.create({
+  const contact = Contact.create({
     name,
     email,
     phone,
   });
-  res.send("Create Contacts");
+  res.redirect("/contacts");
 });
 
 // @desc Get contact
 // @route GET /contacts/:id
 const getContact = asyncHandler(async (req, res) => {
   const contact = await Contact.findById(req.params.id);
-  res.render("update", { contact: contact });
+  res.render("update.ejs", { contact: contact });
 });
 
 // @desc Update contact
